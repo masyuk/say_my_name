@@ -162,8 +162,12 @@ def find_nearest(query_text: str, interim_dir: Path, top_n: int) -> pd.DataFrame
 # ── Streamlit UI ──────────────────────────────────────────────────────────────
 
 st.set_page_config(page_title="Ticker Query", page_icon="📈", layout="centered")
-st.title("📈 Find Closest Tickers")
+st.title("Find Closest")
 st.caption("Enter a company description and find the most similar tickers by cosine distance.")
+
+st.write(f"DEBUG DATA_ROOT: `{DATA_ROOT}`")
+st.write(f"DEBUG exists: `{DATA_ROOT.exists()}`")
+st.write(f"DEBUG glob results: `{list(DATA_ROOT.glob('*/*_query_config.json'))}`")
 
 with st.sidebar:
     st.header("Model")
