@@ -1,0 +1,188 @@
+{
+  "model": "combined",
+  "prefix": "combined",
+  "transformers": [
+    {
+      "type": "tfidf",
+      "cols": [
+        "grok_sh_description"
+      ],
+      "weight": 1.0,
+      "vocab_file": "combined_tfidf_0_vocab.json",
+      "idf_file": "combined_tfidf_0_idf.npy",
+      "analyzer": "char",
+      "ngram_range": [
+        2,
+        4
+      ],
+      "sublinear_tf": true
+    },
+    {
+      "type": "tfidf",
+      "cols": [
+        "grok_ln_description"
+      ],
+      "weight": 1.0,
+      "vocab_file": "combined_tfidf_1_vocab.json",
+      "idf_file": "combined_tfidf_1_idf.npy",
+      "analyzer": "word",
+      "ngram_range": [
+        1,
+        5
+      ],
+      "sublinear_tf": true
+    },
+    {
+      "type": "tfidf",
+      "cols": [
+        "bloomberg_description"
+      ],
+      "weight": 1.0,
+      "vocab_file": "combined_tfidf_2_vocab.json",
+      "idf_file": "combined_tfidf_2_idf.npy",
+      "analyzer": "char_wb",
+      "ngram_range": [
+        2,
+        4
+      ],
+      "sublinear_tf": true
+    },
+    {
+      "type": "tfidf",
+      "cols": [
+        "gpt_sh_description"
+      ],
+      "weight": 1.0,
+      "vocab_file": "combined_tfidf_3_vocab.json",
+      "idf_file": "combined_tfidf_3_idf.npy",
+      "analyzer": "word",
+      "ngram_range": [
+        1,
+        5
+      ],
+      "sublinear_tf": true
+    },
+    {
+      "type": "tfidf",
+      "cols": [
+        "gpt_ln_description"
+      ],
+      "weight": 1.0,
+      "vocab_file": "combined_tfidf_4_vocab.json",
+      "idf_file": "combined_tfidf_4_idf.npy",
+      "analyzer": "word",
+      "ngram_range": [
+        1,
+        5
+      ],
+      "sublinear_tf": true
+    },
+    {
+      "type": "tfidf",
+      "cols": [
+        "yahoo_description"
+      ],
+      "weight": 1.0,
+      "vocab_file": "combined_tfidf_5_vocab.json",
+      "idf_file": "combined_tfidf_5_idf.npy",
+      "analyzer": "word",
+      "ngram_range": [
+        1,
+        5
+      ],
+      "sublinear_tf": true
+    },
+    {
+      "type": "tfidf",
+      "cols": [
+        "routers_description"
+      ],
+      "weight": 1.0,
+      "vocab_file": "combined_tfidf_6_vocab.json",
+      "idf_file": "combined_tfidf_6_idf.npy",
+      "analyzer": "word",
+      "ngram_range": [
+        1,
+        5
+      ],
+      "sublinear_tf": true
+    },
+    {
+      "type": "sbert",
+      "cols": [
+        "grok_sh_description"
+      ],
+      "weight": 1.0,
+      "model_name": "intfloat/e5-base-v2",
+      "prefix": "passage: ",
+      "normalize": true,
+      "dtype": "float32"
+    },
+    {
+      "type": "sbert",
+      "cols": [
+        "grok_ln_description"
+      ],
+      "weight": 1.0,
+      "model_name": "intfloat/e5-base-v2",
+      "prefix": "passage: ",
+      "normalize": true,
+      "dtype": "float32"
+    },
+    {
+      "type": "sbert",
+      "cols": [
+        "bloomberg_description"
+      ],
+      "weight": 1.0,
+      "model_name": "intfloat/e5-base-v2",
+      "prefix": "passage: ",
+      "normalize": true,
+      "dtype": "float32"
+    },
+    {
+      "type": "sbert",
+      "cols": [
+        "gpt_sh_description"
+      ],
+      "weight": 1.0,
+      "model_name": "intfloat/e5-base-v2",
+      "prefix": "passage: ",
+      "normalize": true,
+      "dtype": "float32"
+    },
+    {
+      "type": "sbert",
+      "cols": [
+        "gpt_ln_description"
+      ],
+      "weight": 1.0,
+      "model_name": "intfloat/e5-base-v2",
+      "prefix": "passage: ",
+      "normalize": true,
+      "dtype": "float32"
+    },
+    {
+      "type": "sbert",
+      "cols": [
+        "yahoo_description"
+      ],
+      "weight": 1.0,
+      "model_name": "intfloat/e5-base-v2",
+      "prefix": "passage: ",
+      "normalize": true,
+      "dtype": "float32"
+    },
+    {
+      "type": "sbert",
+      "cols": [
+        "routers_description"
+      ],
+      "weight": 1.0,
+      "model_name": "intfloat/e5-base-v2",
+      "prefix": "passage: ",
+      "normalize": true,
+      "dtype": "float32"
+    }
+  ]
+}
