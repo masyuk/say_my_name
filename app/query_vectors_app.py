@@ -163,17 +163,6 @@ def find_nearest(query_text: str, interim_dir: Path, top_n: int) -> pd.DataFrame
 
 st.set_page_config(page_title="Ticker Query", page_icon="👯‍♀️", layout="centered")
 st.title("Find Closest Neighbors")
-st.markdown("""
-<style>
-    div[data-testid="stTextArea"] textarea {
-        field-sizing: content !important;
-        min-height: 120px !important;
-        max-height: 600px !important;
-        resize: vertical !important;
-        overflow: auto !important;
-    }
-</style>
-""", unsafe_allow_html=True)
 
 with st.sidebar:
     st.header("Model")
@@ -192,8 +181,9 @@ with st.sidebar:
     top_n = st.slider("Top N results", min_value=1, max_value=50, value=10)
 
 query_text = st.text_area(
-    "Company description",
+    "Enter your text here",
     placeholder="e.g. Semiconductor company focused on AI chips and data center GPUs",
+    height=240,
 )
 
 if st.button("Search", type="primary"):
