@@ -163,14 +163,14 @@ def find_nearest(query_text: str, interim_dir: Path, top_n: int) -> pd.DataFrame
 
 st.set_page_config(page_title="Ticker Query", page_icon="👯‍♀️", layout="centered")
 st.title("Find Closest Neighbors")
-st.caption("Enter your text")
-
 st.markdown("""
 <style>
     div[data-testid="stTextArea"] textarea {
-        field-sizing: content;
-        min-height: 120px;
-        resize: vertical;
+        field-sizing: content !important;
+        min-height: 120px !important;
+        max-height: 600px !important;
+        resize: vertical !important;
+        overflow: auto !important;
     }
 </style>
 """, unsafe_allow_html=True)
