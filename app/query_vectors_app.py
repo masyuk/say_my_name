@@ -207,5 +207,3 @@ if st.button("Search", type="primary"):
             "distance": st.column_config.NumberColumn("Cosine Distance", format="%.4f"),
         },
     )
-    st.bar_chart(results.set_index("ticker")["distance"].sort_values(),
-                 y_label="Cosine Distance", x_label="Ticker")
