@@ -161,9 +161,19 @@ def find_nearest(query_text: str, interim_dir: Path, top_n: int) -> pd.DataFrame
 
 # ── Streamlit UI ──────────────────────────────────────────────────────────────
 
-st.set_page_config(page_title="Ticker Query", page_icon="📈", layout="centered")
+st.set_page_config(page_title="Ticker Query", page_icon="👯‍♀️", layout="centered")
 st.title("Find Closest Neighbors")
 st.caption("Enter your text")
+
+st.markdown("""
+<style>
+    div[data-testid="stTextArea"] textarea {
+        field-sizing: content;
+        min-height: 120px;
+        resize: vertical;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 with st.sidebar:
     st.header("Model")
@@ -184,7 +194,6 @@ with st.sidebar:
 query_text = st.text_area(
     "Company description",
     placeholder="e.g. Semiconductor company focused on AI chips and data center GPUs",
-    height=120,
 )
 
 if st.button("Search", type="primary"):
