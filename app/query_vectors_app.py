@@ -38,7 +38,7 @@ DATA_ROOT = _HERE.parent / "data" / "interim" / "vectorized"
 def list_runs(root: Path) -> list[str]:
     """All {category}/{version} dirs under data/interim/vectorized/ with a query_config."""
     found = []
-    for p in sorted(root.glob("*/*_query_config.json")):
+    for p in sorted(root.glob("**/*_query_config.json")):
         found.append(str(p.parent.relative_to(root)))
     return found
 
