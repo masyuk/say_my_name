@@ -165,10 +165,6 @@ st.set_page_config(page_title="Ticker Query", page_icon="📈", layout="centered
 st.title("Find Closest Neighbors")
 st.caption("Enter your text")
 
-st.write(f"DEBUG DATA_ROOT: `{DATA_ROOT}`")
-st.write(f"DEBUG exists: `{DATA_ROOT.exists()}`")
-st.write(f"DEBUG glob results: `{list(DATA_ROOT.glob('**/*_query_config.json'))}`")
-
 with st.sidebar:
     st.header("Model")
 
@@ -191,7 +187,10 @@ query_text = st.text_area(
     height=120,
 )
 
-if st.button("Search", type="primary", disabled=not query_text.strip()):
+if st.button("Search", type="primary"):
+    if not query_text.strip():
+        st.warning("Please enter a description first.")
+        st.stop()
     with st.spinner("Computing distances…"):
         try:
             results = find_nearest(query_text.strip(), interim_dir, top_n)
