@@ -167,7 +167,7 @@ st.caption("Enter your text")
 
 st.write(f"DEBUG DATA_ROOT: `{DATA_ROOT}`")
 st.write(f"DEBUG exists: `{DATA_ROOT.exists()}`")
-st.write(f"DEBUG glob results: `{list(DATA_ROOT.glob('*/*/*_query_config.json'))}`")
+st.write(f"DEBUG glob results: `{list(DATA_ROOT.glob('**/*_query_config.json'))}`")
 
 with st.sidebar:
     st.header("Model")
